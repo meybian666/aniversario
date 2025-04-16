@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <title>Feliz Aniversario</title>
+  <style>
+    body {
+      margin: 0;
+      padding: 0;
+      background: linear-gradient(to bottom, #ffb6c1, #fff0f5);
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      height: 100vh;
+      overflow: hidden;
+    }
+
+    h1 {
+      color: #d10068;
+      font-size: 3rem;
+      text-align: center;
+      text-shadow: 2px 2px 5px #ff69b4;
+      margin-bottom: 20px;
+    }
+
+    .foto-corazon {
+      width: 500px;
+      height: 450px;
+      background-image: url(imagenes/IMG-20241220-WA0087.jpg); /* Reemplaza 'foto.jpg' por tu imagen */
+      background-size: cover;
+      background-position: center;
+      clip-path: path("M250 75 C250 -25, 0 -25, 0 125 C0 250, 250 375, 250 450 C250 375, 500 250, 500 125 C500 -25, 250 -25, 250 75 Z");
+      -webkit-clip-path: path("M250 75 C250 -25, 0 -25, 0 125 C0 250, 250 375, 250 450 C250 375, 500 250, 500 125 C500 -25, 250 -25, 250 75 Z");
+      margin-bottom: 30px;
+    }
+
+    .corazon {
+      position: absolute;
+      color: #ff3366;
+      font-size: 2rem;
+      animation: flotar 10s linear infinite;
+      opacity: 0.8;
+    }
+
+    @keyframes flotar {
+      0% {
+        transform: translateY(100vh) scale(1);
+        opacity: 1;
+      }
+      100% {
+        transform: translateY(-10vh) scale(1.5);
+        opacity: 0;
+      }
+    }
+  </style>
+</head>
+<body>
+  <h1>Feliz aniversario mi amor 💖</h1>
+
+  <!-- Foto en forma de corazón -->
+  <div class="foto-corazon"></div>
+
+  <!-- Corazones flotando -->
+  <script>
+    const cantidad = 60;
+    for (let i = 0; i < cantidad; i++) {
+      const corazon = document.createElement('div');
+      corazon.classList.add('corazon');
+      corazon.innerText = '❤️';
+      corazon.style.left = Math.random() * 100 + 'vw';
+      corazon.style.animationDuration = (Math.random() * 5 + 5) + 's';
+      corazon.style.fontSize = (Math.random() * 20 + 10) + 'px';
+      document.body.appendChild(corazon);
+    }
+  </script>
+</body>
+</html>
